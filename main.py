@@ -80,7 +80,6 @@ def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
 		b_st=time_search(binary_search,list,-1)
 		res = res+(k,l_st,b_st)
 		list =[]
-	print(res)
 
 
 
@@ -101,6 +100,3 @@ def test_compare_search():
 	assert res[1][0] == 100
 	assert res[0][1] < 1
 	assert res[1][1] < 1
-
-
-
