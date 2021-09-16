@@ -53,15 +53,24 @@ We'll compare the running times of `linear_search` and `binary_search` empirical
 - [ ] 7. Complete the `compare_search` function to compare the running times of linear search and binary search. Confirm the implementation by running `pytest main.py::test_compare_search`, which contains some simple checks.
 
 - [ ] 8. Call `print_results(compare_search())` and paste the results here:
+|            n |   linear |   binary |
+|--------------|----------|----------|
+|       10.000 |    0.000 |    0.000 |
+|      100.000 |    0.000 |    0.000 |
+|     1000.000 |    0.000 |    0.000 |
+|    10000.000 |    0.001 |    0.000 |
+|   100000.000 |    0.013 |    0.000 |
+|  1000000.000 |    0.209 |    0.000 |
+| 10000000.000 |    2.120 |    0.000 |
 
-**TODO: add your timing results here**
 
 - [ ] 9. The theoretical worst-case running time of linear search is $O(n)$ and binary search is $O(log_2(n))$. Do these theoretical running times match your empirical results? Why or why not?
   Yes, for each cycle of a binary search, it eliminates half of the remaining elements. The data from previous tests also shows the same result.
 
 - [ ] 10. Binary search assumes the input list is already sorted. Assume it takes $\Theta(n^2)$ time to sort a list of length $n$. Suppose you know ahead of time that you will search the same list $k$ times.
-  + What is worst-case complexity of searching a list of $n$ elements $k$ times using linear search? **TODO: your answer goes here**
-        n * k
-  + For binary search? **TODO: your answer goes here**
-        n^2 + k * log_2(n)
-  + For what values of $k$ is it more efficient to first sort and then use binary search versus just using linear search without sorting? **TODO: your answer goes here**
+  + What is worst-case complexity of searching a list of $n$ elements $k$ times using linear search?
+        O(n) * k
+  + For binary search?
+        Theta(n^2) + k * O(log_2(n))
+  + For what values of $k$ is it more efficient to first sort and then use binary search versus just using linear search without sorting?
+        When the size of the list is large and k is small enough, binary search may takes more time than linear search since it need to sort the list first. However, with the increase of n, the increment of time by using linear search increases faster than binary search.
