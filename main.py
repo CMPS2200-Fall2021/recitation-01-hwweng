@@ -67,21 +67,36 @@ def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
 	  indicating the number of milliseconds it takes
 	  for each method to run on each value of n
 	"""
+def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
+	"""
+	Compare the running time of linear_search and binary_search
+	for input sizes as given. The key for each search should be
+	-1. The list to search for each size contains the numbers from 0 to n-1,
+	sorted in ascending order.
+	You'll use the time_search function to time each call.
+	Returns:
+	  A list of tuples of the form
+	  (n, linear_search_time, binary_search_time)
+	  indicating the number of milliseconds it takes
+	  for each method to run on each value of n
+	"""
 	res = ()
 	for i in sizes:
 		list = []
 		n = i
+		a = 0
 		while n > 0:
-			list.append(n)
+
+			list.append(int(a))
+			a = a+1
 			n = n-1
-		l_st=time_search(linear_search,i,-1)
-		b_st=time_search(binary_search,i,-1)
+		l_st=time_search(linear_search,list,-1)
+		b_st=time_search(binary_search,list,-1)
 		res = res+(i,l_st,b_st)
 		list =[]
-	
-	
-	return res
 
+
+	return res
 
 def print_results(results):
 	""" done """
