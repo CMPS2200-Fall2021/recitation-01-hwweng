@@ -78,7 +78,7 @@ def compare_search(sizes=[1e1, 1e2, 1e3, 1e4, 1e5, 1e6, 1e7]):
 			print(list)
 		l_st=time_search(linear_search,list,-1)
 		b_st=time_search(binary_search,list,-1)
-		res = res+(k,l_st,b_st)
+		res.append((k,l_st,b_st))
 		list =[]
 
 
